@@ -29,4 +29,8 @@ public interface Programable {
     void setAddr(Integer addr);
 
     Integer getAddr(Integer addr);
+
+    List<Integer> getMemoria();          
+    
+    void setMemoria(List<Integer> nueva);
 }

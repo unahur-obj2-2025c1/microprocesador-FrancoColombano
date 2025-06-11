@@ -2,23 +2,15 @@ package ar.edu.unahur.obj2.command.comandos;
 
 import ar.edu.unahur.obj2.command.Programable;
 
-public class STR implements Operable{
+public class STR extends Command{
     private Integer addr;
-    private Programable copia;
+
     public STR (Integer addr){
         this.addr = addr;
     }
 
     @Override
-    public void execute(Programable micro) {
-        this.copia = micro.copy();
+    public void doExecute(Programable micro) {
         micro.setAddr(addr);
-        micro.incProgramCounter();
     }
-
-    @Override
-    public void undo(Programable micro) {
-        micro.copyFrom(copia);
-    }
-
 }

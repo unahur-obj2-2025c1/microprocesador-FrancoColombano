@@ -2,21 +2,11 @@ package ar.edu.unahur.obj2.command.comandos;
 
 import ar.edu.unahur.obj2.command.Programable;
 
-public class ADD implements Operable{
-    private Programable copia;
-
+public class ADD extends Command{
     @Override
-    public void execute(Programable micro) {
-        this.copia = micro.copy();
-        Integer add = micro.getAcumuladorA() + micro.getAcumuladorB();
-        micro.setAcumuladorA(add);
+    public void doExecute(Programable micro) {
+        Integer suma = micro.getAcumuladorA() + micro.getAcumuladorB();
+        micro.setAcumuladorA(suma);
         micro.setAcumuladorB(0);
-        micro.incProgramCounter();
     }
-
-    @Override
-    public void undo(Programable micro) {
-        micro.copyFrom(copia);
-    }
-
 }

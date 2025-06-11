@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ar.edu.unahur.obj2.command.comandos.Operable;
+import ar.edu.unahur.obj2.command.excepctions.MicroException;
 
 public class Microprocesador implements Programable{
     private Integer acumuladorA = 0;
@@ -68,7 +69,7 @@ public class Microprocesador implements Programable{
     }
     private void validarDireccion(Integer addr) {
         if (addr < 0 || addr >= 1024) {
-        throw new RuntimeException("Dirección de memoria inválida: " + addr);
+        throw new MicroException("Dirección de memoria inválida: " + addr);
         }
     }
     @Override

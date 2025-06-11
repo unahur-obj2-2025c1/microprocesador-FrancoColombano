@@ -10,6 +10,7 @@ import ar.edu.unahur.obj2.command.comandos.NOP;
 import ar.edu.unahur.obj2.command.comandos.Operable;
 import ar.edu.unahur.obj2.command.comandos.STR;
 import ar.edu.unahur.obj2.command.comandos.SWAP;
+import ar.edu.unahur.obj2.command.excepctions.MicroException;
 
 public class ProgramBuilder {
 
@@ -46,6 +47,8 @@ public class ProgramBuilder {
     }
 
     public List<Operable> build() {
+        if (instrucciones.isEmpty())
+            throw new MicroException("No se puede buildear un programa sin operaciones");
         return instrucciones;
     }
 }

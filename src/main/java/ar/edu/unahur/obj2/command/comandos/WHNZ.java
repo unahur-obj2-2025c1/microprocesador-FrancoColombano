@@ -4,15 +4,15 @@ import java.util.List;
 
 import ar.edu.unahur.obj2.command.Programable;
 
-public class IFNZ extends CompositeCommand{
+public class WHNZ extends CompositeCommand{
 
-    protected IFNZ(List<Operable> instrucciones) {
+    protected WHNZ(List<Operable> instrucciones) {
         super(instrucciones);
     }
 
     @Override
     public void doExecute(Programable micro) {
-        if (this.notZero(micro)) {
+        while (Boolean.TRUE.equals(this.notZero(micro))) {
             super.doExecute(micro);
         }
     }
